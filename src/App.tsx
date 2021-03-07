@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {AppBar, Container, CssBaseline, Grid, makeStyles, Toolbar, Typography} from '@material-ui/core';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const useStyles = makeStyles((theme) => ({
+    cardGrid: {
+        paddingTop: theme.spacing(8),
+        paddingBottom: theme.spacing(8),
+    },
+}));
+
+const App = () => {
+    const classes = useStyles();
+    return (
+        <div>
+            <CssBaseline/>
+            <AppBar position="relative">
+                <Toolbar>
+                    <Typography variant="h6" color="inherit" noWrap>
+                        Commit overview
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <main>
+                <Container className={classes.cardGrid} maxWidth="md">
+                    <Grid container spacing={4}>
+
+                    </Grid>
+                </Container>
+            </main>
+        </div>
+    );
 }
 
 export default App;
