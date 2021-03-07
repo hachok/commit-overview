@@ -1,33 +1,44 @@
 import React from 'react';
-import {AppBar, Container, CssBaseline, Grid, makeStyles, Toolbar, Typography} from '@material-ui/core';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
+} from 'react-router-dom';
+import {
+    Container,
+    Grid,
+    makeStyles,
+} from '@material-ui/core';
+
+import Header from 'src/components/Header/Header';
+import CommitsListPage from 'src/pages/CommitsListPage/CommitsListPage';
+import CommitDetailsPage from 'src/pages/CommitDetailsPage/CommitDetailsPage';
 
 const useStyles = makeStyles((theme) => ({
-    cardGrid: {
+    container: {
         paddingTop: theme.spacing(8),
         paddingBottom: theme.spacing(8),
-    },
+    }
 }));
 
 const App = () => {
     const classes = useStyles();
     return (
-        <div>
-            <CssBaseline/>
-            <AppBar position="relative">
-                <Toolbar>
-                    <Typography variant="h6" color="inherit" noWrap>
-                        Commit overview
-                    </Typography>
-                </Toolbar>
-            </AppBar>
+        <Router>
+            <Header/>
             <main>
-                <Container className={classes.cardGrid} maxWidth="md">
+                <Container className={classes.container} maxWidth="md">
                     <Grid container spacing={4}>
-
+                        <Switch>
+                            <Route exact path="/" component={CommitsListPage}/>
+                            <Route exact path="/commit/:id" component={CommitDetailsPage}/>
+                            <Redirect path="*" to="/"/>
+                        </Switch>
                     </Grid>
                 </Container>
             </main>
-        </div>
+        </Router>
     );
 }
 
