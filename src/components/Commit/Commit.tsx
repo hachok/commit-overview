@@ -12,7 +12,7 @@ import {CommitInfo} from 'src/pages/CommitsListPage/CommitsListPage';
 interface Props {
     info: CommitInfo
 
-    onClick(commitId: string): void
+    onClick?(commitId: string): void
 }
 
 const useStyles = makeStyles(() => ({
@@ -28,7 +28,7 @@ const Commit: React.FC<Props> = ({info, onClick}) => {
     const classes = useStyles();
 
     const handleClick = () => {
-        onClick(info.sha);
+        onClick && onClick(info.sha);
     }
 
     return (
@@ -55,7 +55,7 @@ const Commit: React.FC<Props> = ({info, onClick}) => {
                     }
                 />
             </ListItem>
-            <Divider variant="inset" component="li"/>
+            <Divider variant="inset"/>
         </div>
     );
 }
