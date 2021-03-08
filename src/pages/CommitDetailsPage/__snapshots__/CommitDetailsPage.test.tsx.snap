@@ -1,0 +1,342 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should render component correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained"
+        tabindex="0"
+        type="button"
+      >
+        <span
+          class="MuiButton-label"
+        >
+          Go back
+        </span>
+        <span
+          class="MuiTouchRipple-root"
+        />
+      </button>
+      <div
+        class="MuiBox-root MuiBox-root-2"
+      >
+        <h6
+          class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+        >
+          Info: 
+        </h6>
+      </div>
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-1 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <div
+            class="makeStyles-wrapper-3"
+            data-testid="commit-element"
+          >
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+            >
+              <div
+                class="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+              >
+                <div
+                  class="MuiAvatar-root MuiAvatar-circle"
+                >
+                  <img
+                    alt="Avatar"
+                    class="MuiAvatar-img"
+                    src="https://avatars.githubusercontent.com/u/2440089?v=4"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiListItemText-root MuiListItemText-multiline"
+              >
+                <span
+                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                >
+                  d74559746c03d9f620e4fd338c70ce319070e0be
+                </span>
+                <p
+                  class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                >
+                  <span
+                    class="MuiTypography-root makeStyles-inline-4 MuiTypography-body2 MuiTypography-colorTextPrimary"
+                  >
+                    Ricky
+                  </span>
+                   - 
+                  08-03-2021
+                </p>
+              </div>
+            </li>
+            <hr
+              class="MuiDivider-root MuiDivider-inset"
+            />
+          </div>
+          <div
+            class="MuiBox-root MuiBox-root-5"
+          >
+            <pre>
+              <code>
+                Use update lane priority to set pending updates on roots (#20918)
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6"
+      >
+        <h6
+          class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+        >
+          Files: 
+        </h6>
+      </div>
+      <div
+        class="MuiPaper-root MuiCard-root makeStyles-card-7 MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <div
+          class="MuiCardContent-root"
+        >
+          <p
+            class="MuiTypography-root makeStyles-title-8 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+          >
+            packages/react-reconciler/src/ReactFiberWorkLoop.old.js
+          </p>
+          <pre>
+            <code>
+              @@ -598,6 +598,27 @@ export function scheduleUpdateOnFiber(
+         flushSyncCallbackQueue();
+       }
+     }
++  } else if (decoupleUpdatePriorityFromScheduler) {
++    const updateLanePriority = getCurrentUpdateLanePriority();
++
++    // Schedule a discrete update but only if it's not Sync.
++    if (
++      (executionContext & DiscreteEventContext) !== NoContext &&
++      // Only updates at user-blocking priority or greater are considered
++      // discrete, even inside a discrete event.
++      updateLanePriority === InputDiscreteLanePriority
++    ) {
++      // This is the result of a discrete event. Track the lowest priority
++      // discrete update per root so we can flush them early, if needed.
++      if (rootsWithPendingDiscreteUpdates === null) {
++        rootsWithPendingDiscreteUpdates = new Set([root]);
++      } else {
++        rootsWithPendingDiscreteUpdates.add(root);
++      }
++    }
++    // Schedule other updates after in case the callback is sync.
++    ensureRootIsScheduled(root, eventTime);
++    schedulePendingInteractions(root, lane);
+   } else {
+     // Schedule a discrete update but only if it's not Sync.
+     if (
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="MuiButtonBase-root MuiButton-root MuiButton-contained"
+      tabindex="0"
+      type="button"
+    >
+      <span
+        class="MuiButton-label"
+      >
+        Go back
+      </span>
+      <span
+        class="MuiTouchRipple-root"
+      />
+    </button>
+    <div
+      class="MuiBox-root MuiBox-root-2"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+      >
+        Info: 
+      </h6>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-card-1 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <div
+          class="makeStyles-wrapper-3"
+          data-testid="commit-element"
+        >
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+          >
+            <div
+              class="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+            >
+              <div
+                class="MuiAvatar-root MuiAvatar-circle"
+              >
+                <img
+                  alt="Avatar"
+                  class="MuiAvatar-img"
+                  src="https://avatars.githubusercontent.com/u/2440089?v=4"
+                />
+              </div>
+            </div>
+            <div
+              class="MuiListItemText-root MuiListItemText-multiline"
+            >
+              <span
+                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                d74559746c03d9f620e4fd338c70ce319070e0be
+              </span>
+              <p
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                <span
+                  class="MuiTypography-root makeStyles-inline-4 MuiTypography-body2 MuiTypography-colorTextPrimary"
+                >
+                  Ricky
+                </span>
+                 - 
+                08-03-2021
+              </p>
+            </div>
+          </li>
+          <hr
+            class="MuiDivider-root MuiDivider-inset"
+          />
+        </div>
+        <div
+          class="MuiBox-root MuiBox-root-5"
+        >
+          <pre>
+            <code>
+              Use update lane priority to set pending updates on roots (#20918)
+            </code>
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root MuiBox-root-6"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+      >
+        Files: 
+      </h6>
+    </div>
+    <div
+      class="MuiPaper-root MuiCard-root makeStyles-card-7 MuiPaper-elevation1 MuiPaper-rounded"
+    >
+      <div
+        class="MuiCardContent-root"
+      >
+        <p
+          class="MuiTypography-root makeStyles-title-8 MuiTypography-body1 MuiTypography-colorTextSecondary MuiTypography-gutterBottom"
+        >
+          packages/react-reconciler/src/ReactFiberWorkLoop.old.js
+        </p>
+        <pre>
+          <code>
+            @@ -598,6 +598,27 @@ export function scheduleUpdateOnFiber(
+         flushSyncCallbackQueue();
+       }
+     }
++  } else if (decoupleUpdatePriorityFromScheduler) {
++    const updateLanePriority = getCurrentUpdateLanePriority();
++
++    // Schedule a discrete update but only if it's not Sync.
++    if (
++      (executionContext & DiscreteEventContext) !== NoContext &&
++      // Only updates at user-blocking priority or greater are considered
++      // discrete, even inside a discrete event.
++      updateLanePriority === InputDiscreteLanePriority
++    ) {
++      // This is the result of a discrete event. Track the lowest priority
++      // discrete update per root so we can flush them early, if needed.
++      if (rootsWithPendingDiscreteUpdates === null) {
++        rootsWithPendingDiscreteUpdates = new Set([root]);
++      } else {
++        rootsWithPendingDiscreteUpdates.add(root);
++      }
++    }
++    // Schedule other updates after in case the callback is sync.
++    ensureRootIsScheduled(root, eventTime);
++    schedulePendingInteractions(root, lane);
+   } else {
+     // Schedule a discrete update but only if it's not Sync.
+     if (
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

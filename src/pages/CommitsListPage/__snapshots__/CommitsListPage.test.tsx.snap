@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should render component correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <h6
+        class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+      >
+        <div
+          class="MuiBox-root MuiBox-root-2"
+        >
+          <strong>
+            facebook / react
+          </strong>
+        </div>
+        <div
+          class="MuiPickersDateRangePickerInput-root"
+        >
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+              data-shrink="false"
+            >
+              Start date
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                placeholder="mm/dd/yyyy"
+                type="tel"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-5"
+                >
+                  <span>
+                    Start date
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+            <p
+              class="MuiFormHelperText-root MuiFormHelperText-contained"
+            >
+              mm/dd/yyyy
+            </p>
+          </div>
+          <p
+            class="MuiTypography-root WithStyles(ForwardRef(Typography))-root-7 MuiTypography-body1"
+          >
+             to 
+          </p>
+          <div
+            class="MuiFormControl-root MuiTextField-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+              data-shrink="false"
+            >
+              End date
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+            >
+              <input
+                aria-invalid="false"
+                class="MuiInputBase-input MuiOutlinedInput-input"
+                placeholder="mm/dd/yyyy"
+                type="tel"
+                value=""
+              />
+              <fieldset
+                aria-hidden="true"
+                class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="PrivateNotchedOutline-legendLabelled-5"
+                >
+                  <span>
+                    End date
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+            <p
+              class="MuiFormHelperText-root MuiFormHelperText-contained"
+            >
+              mm/dd/yyyy
+            </p>
+          </div>
+        </div>
+      </h6>
+      <div
+        class="MuiBox-root MuiBox-root-8"
+      >
+        <ul
+          class="MuiList-root makeStyles-root-1 MuiList-padding"
+        >
+          <div
+            class="makeStyles-wrapper-9"
+            data-testid="commit-element"
+          >
+            <li
+              class="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+            >
+              <div
+                class="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+              >
+                <div
+                  class="MuiAvatar-root MuiAvatar-circle"
+                >
+                  <img
+                    alt="Avatar"
+                    class="MuiAvatar-img"
+                    src="https://avatars.githubusercontent.com/u/2440089?v=4"
+                  />
+                </div>
+              </div>
+              <div
+                class="MuiListItemText-root MuiListItemText-multiline"
+              >
+                <span
+                  class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+                >
+                  d74559746c03d9f620e4fd338c70ce319070e0be
+                </span>
+                <p
+                  class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+                >
+                  <span
+                    class="MuiTypography-root makeStyles-inline-10 MuiTypography-body2 MuiTypography-colorTextPrimary"
+                  >
+                    Ricky
+                  </span>
+                   - 
+                  08-03-2021
+                </p>
+              </div>
+            </li>
+            <hr
+              class="MuiDivider-root MuiDivider-inset"
+            />
+          </div>
+        </ul>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <h6
+      class="MuiTypography-root MuiTypography-h6 MuiTypography-colorInherit MuiTypography-noWrap"
+    >
+      <div
+        class="MuiBox-root MuiBox-root-2"
+      >
+        <strong>
+          facebook / react
+        </strong>
+      </div>
+      <div
+        class="MuiPickersDateRangePickerInput-root"
+      >
+        <div
+          class="MuiFormControl-root MuiTextField-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+            data-shrink="false"
+          >
+            Start date
+          </label>
+          <div
+            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiOutlinedInput-input"
+              placeholder="mm/dd/yyyy"
+              type="tel"
+              value=""
+            />
+            <fieldset
+              aria-hidden="true"
+              class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                class="PrivateNotchedOutline-legendLabelled-5"
+              >
+                <span>
+                  Start date
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+          <p
+            class="MuiFormHelperText-root MuiFormHelperText-contained"
+          >
+            mm/dd/yyyy
+          </p>
+        </div>
+        <p
+          class="MuiTypography-root WithStyles(ForwardRef(Typography))-root-7 MuiTypography-body1"
+        >
+           to 
+        </p>
+        <div
+          class="MuiFormControl-root MuiTextField-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
+            data-shrink="false"
+          >
+            End date
+          </label>
+          <div
+            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl"
+          >
+            <input
+              aria-invalid="false"
+              class="MuiInputBase-input MuiOutlinedInput-input"
+              placeholder="mm/dd/yyyy"
+              type="tel"
+              value=""
+            />
+            <fieldset
+              aria-hidden="true"
+              class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                class="PrivateNotchedOutline-legendLabelled-5"
+              >
+                <span>
+                  End date
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+          <p
+            class="MuiFormHelperText-root MuiFormHelperText-contained"
+          >
+            mm/dd/yyyy
+          </p>
+        </div>
+      </div>
+    </h6>
+    <div
+      class="MuiBox-root MuiBox-root-8"
+    >
+      <ul
+        class="MuiList-root makeStyles-root-1 MuiList-padding"
+      >
+        <div
+          class="makeStyles-wrapper-9"
+          data-testid="commit-element"
+        >
+          <li
+            class="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+          >
+            <div
+              class="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+            >
+              <div
+                class="MuiAvatar-root MuiAvatar-circle"
+              >
+                <img
+                  alt="Avatar"
+                  class="MuiAvatar-img"
+                  src="https://avatars.githubusercontent.com/u/2440089?v=4"
+                />
+              </div>
+            </div>
+            <div
+              class="MuiListItemText-root MuiListItemText-multiline"
+            >
+              <span
+                class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
+              >
+                d74559746c03d9f620e4fd338c70ce319070e0be
+              </span>
+              <p
+                class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
+              >
+                <span
+                  class="MuiTypography-root makeStyles-inline-10 MuiTypography-body2 MuiTypography-colorTextPrimary"
+                >
+                  Ricky
+                </span>
+                 - 
+                08-03-2021
+              </p>
+            </div>
+          </li>
+          <hr
+            class="MuiDivider-root MuiDivider-inset"
+          />
+        </div>
+      </ul>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,9 +1,11 @@
-import React, {Fragment, useCallback, useEffect, useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {useHistory, useParams} from 'react-router-dom';
 import {Box, Button, Card, CardContent, makeStyles, Typography} from '@material-ui/core';
 
 import CommitFile from 'src/components/CommitFile/CommitFile';
 import Commit from 'src/components/Commit/Commit';
+import {API_URL} from 'src/constants';
+import {CommitData} from 'src/types';
 
 export interface FileInfo {
     sha: string
@@ -11,19 +13,7 @@ export interface FileInfo {
     patch: string
 }
 
-interface CommitData {
-    sha: string
-    commit: {
-        author: {
-            name: string,
-            email: string,
-            date: string
-        },
-        message: string
-    }
-    author: {
-        avatar_url: string
-    }
+interface CommitInfo extends CommitData{
     files: FileInfo[]
 }
 
@@ -39,18 +29,18 @@ const useStyles = makeStyles(() => ({
 
 const CommitDetailsPage: React.FC = () => {
     const {id} = useParams<Params>();
-    const [commit, setCommit] = useState<CommitData>();
+    const [commit, setCommit] = useState<CommitInfo>();
     const history = useHistory();
     const classes = useStyles();
 
-    const fetchCommitDetails = useCallback(async () => {
-        const res = await fetch('https://api.github.com/repos/facebook/react/commits/' + id);
-        return await res.json();
-    }, []);
-
     useEffect(() => {
-        fetchCommitDetails().then((commit: CommitData) => setCommit(commit));
-    }, [fetchCommitDetails]);
+        const fetchCommitDetails = async () => {
+            const res = await fetch(`${API_URL}/commits/` + id);
+            return await res.json();
+        };
+
+        fetchCommitDetails().then((commit: CommitInfo) => setCommit(commit));
+    }, [id]);
 
     return (
         <Fragment>
@@ -62,15 +52,18 @@ const CommitDetailsPage: React.FC = () => {
                 <Card className={classes.card}>
                     <CardContent>
                         <Commit info={commit}/>
-                        <Box mt={2}><Typography color="textSecondary">
-                            <pre><code>{commit.commit.message}</code></pre>
-                        </Typography></Box>
+                        <Box mt={2}>
+                                <pre>
+                                    <code>{commit.commit.message}</code>
+                                </pre>
+                        </Box>
                     </CardContent>
                 </Card>
                 <Box m={2}>
                     <Typography variant="h6" color="inherit" noWrap>Files: </Typography>
                 </Box>
-                {!!commit.files.length && commit.files.map((file: FileInfo) => <CommitFile info={file}/>)}
+                {!!commit.files.length && commit.files.map((file: FileInfo) => <CommitFile key={file.sha}
+                                                                                           info={file}/>)}
             </Fragment>}
         </Fragment>
     );

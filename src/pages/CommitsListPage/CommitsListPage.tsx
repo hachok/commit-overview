@@ -1,22 +1,17 @@
 import React, {Fragment, useCallback, useEffect, useState} from 'react';
-import {List, makeStyles, Typography} from '@material-ui/core';
+import {Box, List, makeStyles, TextField, Typography} from '@material-ui/core';
 import {useHistory} from 'react-router-dom';
+import {
+    DateRangePicker,
+    DateRangeDelimiter,
+    RangeInput, LocalizationProvider
+} from '@material-ui/pickers';
+import DateFnsUtils from '@material-ui/pickers/adapter/date-fns';
+import {format} from 'date-fns';
 
 import Commit from 'src/components/Commit/Commit';
-
-export interface CommitInfo {
-    sha: string
-    commit: {
-        author: {
-            name: string
-            email: string,
-            date: string
-        }
-    }
-    author: {
-        avatar_url: string
-    }
-}
+import {API_URL} from 'src/constants';
+import {CommitData} from 'src/types';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 const CommitsListPage: React.FC = () => {
     const [commits, setCommits] = useState([]);
+    const [selectedDate, handleDateChange] = React.useState<RangeInput<null>>([null, null]);
     const classes = useStyles();
     const history = useHistory();
 
@@ -35,9 +31,20 @@ const CommitsListPage: React.FC = () => {
     };
 
     const fetchCommitsList = useCallback(async () => {
-        const res = await fetch('https://api.github.com/repos/facebook/react/commits');
-        return await res.json();
-    }, []);
+        const [startDate, endDate] = selectedDate;
+        const urlParams = new URLSearchParams();
+
+        if (startDate) urlParams.set('since', format(startDate as Date, 'yyyy-MM-dd'));
+        if (endDate) urlParams.set('until', format(endDate as Date, 'yyyy-MM-dd'));
+
+        const urlParamsString = urlParams.toString() ? `?${urlParams.toString()}` : '';
+       try {
+           const res = await fetch(`${API_URL}/commits` + urlParamsString);
+           return await res.json();
+       } catch (e) {
+           console.log(e);
+       }
+    }, [selectedDate]);
 
     useEffect(() => {
         fetchCommitsList().then((commits) => setCommits(commits));
@@ -46,16 +53,33 @@ const CommitsListPage: React.FC = () => {
     return (
         <Fragment>
             <Typography variant="h6" color="inherit" noWrap>
-                <strong>facebook / react</strong>
+                <Box mt={1} mb={2}><strong>facebook / react</strong></Box>
+                <LocalizationProvider dateAdapter={DateFnsUtils}>
+                    <DateRangePicker
+                        startText="Start date"
+                        endText="End date"
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        renderInput={(startProps, endProps) => (
+                            <Fragment>
+                                <TextField {...startProps} />
+                                <DateRangeDelimiter> to </DateRangeDelimiter>
+                                <TextField {...endProps} />
+                            </Fragment>
+                        )}
+                    />
+                </LocalizationProvider>
             </Typography>
-            <List className={classes.root}>
-                {!!commits.length &&
-                commits.map((commit: CommitInfo) =>
-                    <Commit
-                        key={commit.sha}
-                        info={commit}
-                        onClick={onCommitClick}/>)}
-            </List>
+            <Box mt={2} width="100%">
+                <List className={classes.root}>
+                    {!!commits.length &&
+                    commits.map((commit: CommitData) =>
+                        <Commit
+                            key={commit.sha}
+                            info={commit}
+                            onClick={onCommitClick}/>)}
+                </List>
+            </Box>
         </Fragment>);
 };
 

@@ -7,10 +7,11 @@ import {
     ListItemText, makeStyles,
     Typography
 } from '@material-ui/core';
-import {CommitInfo} from 'src/pages/CommitsListPage/CommitsListPage';
+import {format} from 'date-fns';
+import {CommitData} from 'src/types';
 
 interface Props {
-    info: CommitInfo
+    info: CommitData
 
     onClick?(commitId: string): void
 }
@@ -32,7 +33,7 @@ const Commit: React.FC<Props> = ({info, onClick}) => {
     }
 
     return (
-        <div className={classes.wrapper} onClick={handleClick}>
+        <div data-testid="commit-element" className={classes.wrapper} onClick={handleClick}>
             <ListItem alignItems="flex-start">
                 <ListItemAvatar>
                     <Avatar alt="Avatar" src={info.author.avatar_url}/>
@@ -50,7 +51,7 @@ const Commit: React.FC<Props> = ({info, onClick}) => {
                                 {info.commit.author.name}
                             </Typography>
                             {' - '}
-                            {info.commit.author.date}
+                            {format(Date.parse(info.commit.author.date), 'dd-MM-yyyy')}
                         </Fragment>
                     }
                 />

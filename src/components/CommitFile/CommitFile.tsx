@@ -32,7 +32,9 @@ const CommitFile: React.FC<Props> = ({info}) => {
                 <Typography className={classes.title} color="textSecondary" gutterBottom>
                     {info.filename}
                 </Typography>
-                <pre><code>{info.patch}</code></pre>
+                <pre>
+                    <code>{info.patch}</code>
+                </pre>
             </CardContent>
         </Card>
     );
