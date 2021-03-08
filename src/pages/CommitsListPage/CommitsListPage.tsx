@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
 const CommitsListPage: React.FC = () => {
     const [commits, setCommits] = useState([]);
-    const [selectedDate, handleDateChange] = React.useState<RangeInput<null>>([null, null]);
+    const prevMonthDate = new Date(new Date().setMonth(new Date().getMonth() - 1));
+    const [selectedDate, handleDateChange] = React.useState<RangeInput<null>>([prevMonthDate, null]);
     const classes = useStyles();
     const history = useHistory();
 
@@ -38,12 +39,9 @@ const CommitsListPage: React.FC = () => {
         if (endDate) urlParams.set('until', format(endDate as Date, 'yyyy-MM-dd'));
 
         const urlParamsString = urlParams.toString() ? `?${urlParams.toString()}` : '';
-       try {
-           const res = await fetch(`${API_URL}/commits` + urlParamsString);
-           return await res.json();
-       } catch (e) {
-           console.log(e);
-       }
+
+        const res = await fetch(`${API_URL}/commits` + urlParamsString);
+        return await res.json();
     }, [selectedDate]);
 
     useEffect(() => {

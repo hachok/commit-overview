@@ -13,7 +13,7 @@ export interface FileInfo {
     patch: string
 }
 
-interface CommitInfo extends CommitData{
+interface CommitInfo extends CommitData {
     files: FileInfo[]
 }
 

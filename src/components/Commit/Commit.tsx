@@ -23,6 +23,17 @@ const useStyles = makeStyles(() => ({
     inline: {
         display: 'inline',
     },
+    listItem: {
+        height: '45px',
+        overflow: 'hidden',
+        '& p': {
+            display: 'inline-block',
+            width: '100%',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+        },
+    }
 }));
 
 const Commit: React.FC<Props> = ({info, onClick}) => {
@@ -39,7 +50,8 @@ const Commit: React.FC<Props> = ({info, onClick}) => {
                     <Avatar alt="Avatar" src={info.author.avatar_url}/>
                 </ListItemAvatar>
                 <ListItemText
-                    primary={info.sha}
+                    primary={info.commit.author.name}
+                    className={classes.listItem}
                     secondary={
                         <Fragment>
                             <Typography
@@ -48,10 +60,10 @@ const Commit: React.FC<Props> = ({info, onClick}) => {
                                 className={classes.inline}
                                 color="textPrimary"
                             >
-                                {info.commit.author.name}
+                                {format(Date.parse(info.commit.author.date), 'dd-MM-yyyy')}
                             </Typography>
                             {' - '}
-                            {format(Date.parse(info.commit.author.date), 'dd-MM-yyyy')}
+                            {info.commit.message}
                         </Fragment>
                     }
                 />

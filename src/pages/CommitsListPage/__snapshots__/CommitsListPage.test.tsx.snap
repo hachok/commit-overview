@@ -22,8 +22,8 @@ Object {
             class="MuiFormControl-root MuiTextField-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
-              data-shrink="false"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
+              data-shrink="true"
             >
               Start date
             </label>
@@ -35,14 +35,14 @@ Object {
                 class="MuiInputBase-input MuiOutlinedInput-input"
                 placeholder="mm/dd/yyyy"
                 type="tel"
-                value=""
+                value="02/08/2021"
               />
               <fieldset
                 aria-hidden="true"
                 class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
               >
                 <legend
-                  class="PrivateNotchedOutline-legendLabelled-5"
+                  class="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
                 >
                   <span>
                     Start date
@@ -51,7 +51,7 @@ Object {
               </fieldset>
             </div>
             <p
-              class="MuiFormHelperText-root MuiFormHelperText-contained"
+              class="MuiFormHelperText-root MuiFormHelperText-contained MuiFormHelperText-filled"
             >
               mm/dd/yyyy
             </p>
@@ -128,12 +128,12 @@ Object {
                 </div>
               </div>
               <div
-                class="MuiListItemText-root MuiListItemText-multiline"
+                class="MuiListItemText-root makeStyles-listItem-11 MuiListItemText-multiline"
               >
                 <span
                   class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
                 >
-                  d74559746c03d9f620e4fd338c70ce319070e0be
+                  Ricky
                 </span>
                 <p
                   class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -141,10 +141,10 @@ Object {
                   <span
                     class="MuiTypography-root makeStyles-inline-10 MuiTypography-body2 MuiTypography-colorTextPrimary"
                   >
-                    Ricky
+                    08-03-2021
                   </span>
                    - 
-                  08-03-2021
+                  Use update lane priority to set pending updates on roots (#20918)
                 </p>
               </div>
             </li>
@@ -174,8 +174,8 @@ Object {
           class="MuiFormControl-root MuiTextField-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined"
-            data-shrink="false"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-outlined MuiFormLabel-filled"
+            data-shrink="true"
           >
             Start date
           </label>
@@ -187,14 +187,14 @@ Object {
               class="MuiInputBase-input MuiOutlinedInput-input"
               placeholder="mm/dd/yyyy"
               type="tel"
-              value=""
+              value="02/08/2021"
             />
             <fieldset
               aria-hidden="true"
               class="PrivateNotchedOutline-root-3 MuiOutlinedInput-notchedOutline"
             >
               <legend
-                class="PrivateNotchedOutline-legendLabelled-5"
+                class="PrivateNotchedOutline-legendLabelled-5 PrivateNotchedOutline-legendNotched-6"
               >
                 <span>
                   Start date
@@ -203,7 +203,7 @@ Object {
             </fieldset>
           </div>
           <p
-            class="MuiFormHelperText-root MuiFormHelperText-contained"
+            class="MuiFormHelperText-root MuiFormHelperText-contained MuiFormHelperText-filled"
           >
             mm/dd/yyyy
           </p>
@@ -280,12 +280,12 @@ Object {
               </div>
             </div>
             <div
-              class="MuiListItemText-root MuiListItemText-multiline"
+              class="MuiListItemText-root makeStyles-listItem-11 MuiListItemText-multiline"
             >
               <span
                 class="MuiTypography-root MuiListItemText-primary MuiTypography-body1 MuiTypography-displayBlock"
               >
-                d74559746c03d9f620e4fd338c70ce319070e0be
+                Ricky
               </span>
               <p
                 class="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-displayBlock"
@@ -293,10 +293,10 @@ Object {
                 <span
                   class="MuiTypography-root makeStyles-inline-10 MuiTypography-body2 MuiTypography-colorTextPrimary"
                 >
-                  Ricky
+                  08-03-2021
                 </span>
                  - 
-                08-03-2021
+                Use update lane priority to set pending updates on roots (#20918)
               </p>
             </div>
           </li>
